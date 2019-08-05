@@ -1,0 +1,460 @@
+<html>	
+	
+	<head>
+
+		<title>Final_Project</title>
+
+
+	
+
+
+	
+
+		<script language="JavaScript">
+
+		<!--hide
+
+		var one // first die for player A
+		var two	// 2nd die for player A
+		var three // 3rd die for player A
+		var four // 1st die for player B
+		var five // 2nd die for player B
+		var six // 3rd die for player B
+		var a // that is when a wins 
+		var b // that is when b wins 
+		var round // for game rounds
+		var draw // no. of drawn games
+		var total // this is the total of the first try for player A
+		var totall // this is the total of the first try for player B
+		var tottal // this is the total of the 2nd try for player A
+		var tottall // this is the total of the 2nd try for player B
+		var flag // this is for the alert message for player A
+		var lost// this is for the alert message for player B
+		var flagg// this is for the alert message for player A
+		var lostt// this is for the alert message for player B
+	
+
+
+		round = 0
+		a = 0
+		b = 0 
+		draw = 0
+		flag = 0
+		lost = 0
+		flagg = 0
+		lostt = 0 
+		
+
+		
+
+		function Diceit_a()
+			{
+				if(flagg == 0 )
+					{
+				
+					one = parseInt(Math.random()*6+1)
+					two = parseInt(Math.random()*6+1)
+			
+					total = one + two
+
+					form1.first_field.value = one
+					form1.second_field.value = two
+					form1.seventh_field.value = total
+					
+					flagg = 1
+					}
+					
+				else 
+					{
+					window.alert("Get lost!","")
+					}
+					
+
+				
+				
+				round = round + 1
+				
+				
+			}
+
+
+		function Diceit_b()
+			{
+				if(lostt == 0)
+					{
+					four = parseInt(Math.random()*6+1)
+					five = parseInt(Math.random()*6+1)
+
+					four = parseInt(Math.random()*6+1)
+					five = parseInt(Math.random()*6+1)
+
+					totall = four + five
+
+					form1.fourth_field.value = four
+					form1.fifth_field.value = five
+					form1.eighth_field.value = totall
+					lostt = 1
+					}
+
+				else 
+					{
+					window.alert("Get lost!","")
+					}
+					
+				
+			
+			}
+
+			
+
+
+		function thirdy()
+			{
+				if(flag == 0)
+					{
+					three = parseInt(Math.random()*6+1)
+					form1.third_field.value = three 
+					tottal = total + three
+					form1.seventh_field.value = tottal
+					flag = 1
+
+					}
+				else 
+					{
+					window.alert("Get lost!","")
+					}
+
+					//from google window alert html
+					
+			
+			}
+
+		function fourthdy()
+			{
+				if(lost == 0)
+					{
+					six = parseInt(Math.random()*6+1)
+					form1.sixth_field.value = six
+			
+					tottall = totall + six
+					form1.eighth_field.value = tottall
+					lost = 1
+
+					}
+				else 
+					{
+					window.alert("Get lost!","")
+					}
+				
+
+				
+			}
+			
+
+
+		function kleerit()
+			{
+				flag=0
+				lost = 0
+				flagg = 0
+				lostt = 0
+				
+				
+
+				form1.first_field.value = " " 
+				form1.second_field.value = " " 
+				form1.third_field.value = " " 
+				form1.fourth_field.value = " " 
+				form1.fifth_field.value = " "
+				form1.sixth_field.value = " "  
+				form1.seventh_field.value = " "
+				form1.eighth_field.value = " " 
+				form1.ninth_field.value = " " 
+				form1.tenth_field.value= 0
+				form1.eleventh_field.value= 0
+				form1.twelvth_field.value= 0
+				form1.thirteenth_field.value= 0
+
+				a = 0
+				b = 0 
+				round = 0
+				draw = 0
+			}
+			
+
+			 
+			
+			
+
+
+		function resultit()
+			{
+				flag=0
+				lost = 0
+				flagg = 0
+				lostt = 0
+			
+
+				form1.tenth_field.value = round
+				if (tottal>15 && tottall<16)
+					{
+					form1.ninth_field.value="The winner is B"
+					b = b + 1
+					form1.twelvth_field.value= b
+					}
+				else 
+					{
+					 	if(tottall>15 && tottal<16)
+							{
+							form1.ninth_field.value="The winner is A"
+							a = a + 1
+							form1.eleventh_field.value= a
+							}
+						else 
+							{
+								if(tottal == tottall && tottal>15)
+									{
+									form1.ninth_field.value="No winner"
+									}
+								else
+								{
+										if ( tottal>tottall && tottal<16)
+											{
+											form1.ninth_field.value="The winner is A"
+											a = a + 1
+											form1.eleventh_field.value= a
+											}
+										else 	
+										{
+											if(tottall>tottal && tottall<16)
+												{
+												form1.ninth_field.value="The winner is B"
+												b = b + 1
+												form1.twelvth_field.value= b
+												} 
+											else
+											{
+
+												if( tottal == tottall && tottal<16)
+													{
+													form1.ninth_field.value="Draw"
+													draw = draw + 1 
+													form1.thirteenth_field.value= draw
+													}
+												else
+												{
+													if(tottal>tottall || tottall> tottal && tottal>15 || tottall >15)
+														{
+														form1.ninth_field.value="No winner"
+														}
+
+												}
+											}		
+										}
+								}
+							}
+
+					}			
+
+			}
+
+
+
+
+		var newwindow;
+		function poptastic(url)
+			{
+			newwindow=window.open(url,'name','height=400,width=200');
+			if (window.focus) {newwindow.focus()}
+			}
+
+
+
+
+			 
+
+
+		//end hide-->
+
+		</script>
+
+
+		</head>
+
+	<body background="new1.jpg">
+
+		<font style = "font-family:times new roman; font-size:15; font-weight:bold; color:white;">Read game instructions before you start please.<br/></font>	
+		<font style = "font-family:times new roman; font-size:20; font-weight:bold; color:white;"><a href="javascript:poptastic('instruction.html');">Game Instructions</font></a> 
+		
+
+			<form name="form1"/>
+
+
+			<center><font style = "font-family:times new roman; font-size:35; font-weight:bold; color:teal;">Play <font color="red">Fifteen</font></center>
+
+		
+
+			<input type="button" value="Press to start a new game" name="action_1" onClick="kleerit()" style="background-color:yellow; color:black;">
+
+		<br/><br/>
+
+			<center><input type="button" value="Press to roll the Dice for player A" name="action_2" onClick="Diceit_a()" style="background-color:teal; color:white;">
+
+		&#160&#160&#160&#160&#160
+	
+			<input type="button" value="Press to roll the Dice for player B" name="action_2" onClick="Diceit_b()" style="background-color:red; color:white;"></center>
+	
+			
+		
+			
+			
+			
+			<table style="border-style:ridge; border-width:10px; border-color:lime; width="30%"height="30%"border="1"align="center"  bgcolor="gold">
+
+				
+			
+			
+	
+		<tr>
+
+				<td align="center"><font color ="teal"><b>Player A numbers</b></font>
+
+			<br/><br/><input type="text"name="first_field"/></td>
+
+				<td align="center">
+			<br/><br/><input type="text"name="second_field"/></td>
+
+				<td align="center">
+			<br/><br/><input type="text"name="third_field"/></td>	
+
+
+		</tr>
+			
+			
+		<tr>
+
+				<td align="center"><font color ="teal"><b>Total for A is</b></font></td>
+
+			<td align="center"><input type="text"name="seventh_field"/></td>
+
+
+
+
+		</tr>
+
+	
+				
+		<tr>
+
+				<td align="center"><font color ="red"><b>Player B numbers</b></font>
+			<br/><br/><input type="text"name="fourth_field"/></td>
+
+				<td align="center">
+			<br/><br/><input type="text"name="fifth_field"/></td>
+
+				<td align="center">
+			<br/><br/><input type="text"name="sixth_field"/>
+			
+		</tr>
+				
+
+		<tr>
+
+				<td align="center"><font color ="red"><b>Total for B is</b></font></td>
+
+			<br/><br/><td align="center"><input type="text"name="eighth_field"/></td>
+
+
+
+
+		</tr>
+
+		
+
+				
+		
+
+	</table>
+
+		
+		<br/>
+
+			<center> 
+			<input type="button" value="Press to roll again for player A" name="action_3" onClick="thirdy()" style="background-color:teal; color:white;">
+		&#160&#160&#160&#160&#160
+			<input type="button" value="Press to roll again for player B" name="action_4" onClick="fourthdy()" style="background-color:red; color:white;">
+			</center>
+	<br/>	
+
+				
+
+		<center><input type="button" value="Press to see result" name="action_5" onClick="resultit()"style="height:30; background-color:lime; color:black;">		
+	<br/>
+
+
+		<tr>
+
+				<td align="center"></td>
+
+			<td align="center"><input type="text"name="ninth_field"/></td></center>
+
+
+	<br/>
+
+		</tr>
+
+
+
+
+		<table align="center">
+
+		<tr>
+
+			<td><font color="white">Rounds played</font></td>
+			<td align="center"><input type="text"name="tenth_field" size="3"/></td>
+		</tr>
+
+
+
+		<tr>
+
+			<td><font color="teal">A has won</td>
+			<td align="center"><input type="text"name="eleventh_field" size="3"/></td>
+		</tr>
+
+	
+	
+
+
+		<tr>
+
+			<td><font color="red">B has won</td>
+			<td align="center"><input type="text"name="twelvth_field" size="3"/></td>
+		</tr>
+
+	
+	
+
+		<tr>
+
+			<td><font color="lime">No. drawn</td>
+			<td align="center"><input type="text"name="thirteenth_field" size="3"/></td>
+		</tr>
+
+
+		</table>
+
+
+			
+
+		</form>
+
+			
+
+	</body>
+
+	
+
+
+
+</html>
